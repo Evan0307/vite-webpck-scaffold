@@ -43,8 +43,13 @@ module.exports = {
   },
 
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: true,
     moduleIds: 'deterministic',
+    minimizer: [
+      new CssMinimizerPlugin({
+        parallel: 4,
+      }),
+    ],
     splitChunks: {
       chunks: 'all',
       name: false,
@@ -125,6 +130,12 @@ module.exports = {
             },
           },
           postcssLoader,
+          {
+            loader: "thread-loader",
+            options: {
+              workerParallelJobs: 2,
+            },
+          },
           'sass-loader',
         ],
       },
@@ -166,7 +177,6 @@ module.exports = {
       chunkFilename: 'css/[id].[contenthash].css',
       ignoreOrder: true,
     }),
-    new CssMinimizerPlugin(),
     new HtmlWebpackPlugin({
       template: 'config/public.html',
       inject: 'body',
