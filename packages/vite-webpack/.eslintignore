@@ -1,0 +1,9 @@
+*.eslintrc.js
+*.eslint.js
+*.prettierrc.js
+*.stylelintrc.js
+*typings.d.ts
+*vite.config.ts
+/public
+*webpack.config.js
+*services-types-gen.js
