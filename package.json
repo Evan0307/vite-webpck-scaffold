@@ -1,11 +1,6 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "i": "yarn && lerna bootstrap",
