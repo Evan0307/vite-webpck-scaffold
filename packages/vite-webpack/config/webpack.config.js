@@ -40,12 +40,14 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src'),
     },
+    modules: ["node_modules", path.resolve(__dirname, '../src')],
   },
 
   optimization: {
     runtimeChunk: true,
     moduleIds: 'deterministic',
     minimizer: [
+      '....',
       new CssMinimizerPlugin({
         parallel: 4,
       }),

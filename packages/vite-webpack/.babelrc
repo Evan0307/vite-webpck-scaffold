@@ -1,0 +1,26 @@
+ {
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "useBuiltIns": "usage",
+        "corejs": {
+          "version": 3,
+          "propsals": true 
+        }
+      }
+    ],
+    ["@babel/preset-react", { "runtime": "automatic" }],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    ["@babel/plugin-proposal-decorators",{"legacy": true}],
+    "@babel/plugin-syntax-jsx",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es",
+      "style": "css"}, "antd"],
+    ["import", { "libraryName": "antd-mobile", "libraryDirectory": "es",
+      "style": "css"}, "antd-mobile"]
+  ]
+}
